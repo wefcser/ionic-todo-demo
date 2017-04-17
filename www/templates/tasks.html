@@ -1,0 +1,21 @@
+<ion-view view-title="Todo">
+  <ion-nav-buttons side="right">
+    <button class="button button-icon" ui-sref="create">
+      <i class="icon ion-compose"></i>
+    </button>
+  </ion-nav-buttons>
+  <ion-content>
+    <form ng-submit="completeTask(task)">
+      <label class="item item-input">
+        <input type="text" placeholder="What have you completed?" ng-model="task.title">
+        <button type="submit" class="button button-small button-positive">Complete Task</button>
+      </label>
+    </form>
+    <!-- our list and list items -->
+    <ion-list>
+      <ion-item ng-repeat="task in tasks">
+        <lable ng-class="{strike:task.check}" >{{task.title}}</lable>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
